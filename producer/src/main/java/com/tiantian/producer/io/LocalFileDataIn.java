@@ -30,7 +30,7 @@ public class LocalFileDataIn implements DataIn {
     }
 
     public <T extends Data> List<T> read(Class<T> clazz) throws IOException {
-
+        System.out.println("read executed!");
         List<T> ts = new ArrayList<T>();
 
         String line = null;
@@ -38,6 +38,7 @@ public class LocalFileDataIn implements DataIn {
             try {
                 T t = clazz.newInstance();
                 t.setValue(line);
+//                System.out.println("t.getValue() -> " + t.getValue());
                 ts.add(t);
             } catch (InstantiationException e) {
                 e.printStackTrace();
@@ -45,7 +46,7 @@ public class LocalFileDataIn implements DataIn {
                 e.printStackTrace();
             }
         }
-        return null;
+        return ts;
     }
 
     public void close() throws IOException {
