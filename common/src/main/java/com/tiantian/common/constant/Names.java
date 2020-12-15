@@ -5,7 +5,8 @@ import com.tiantian.common.bean.Val;
 
 
 public enum Names implements Val {
-    NAMESPACE("telecom");
+    NAMESPACE("telecom"),
+    TOPIC("telecom");
 
     private String namespace;
 
@@ -13,8 +14,8 @@ public enum Names implements Val {
         this.namespace = namespace;
     }
 
-    public Object getValue() {
-        return null;
+    public String getValue() {
+        return namespace;
     }
 
     public void setValue(Object val) {
